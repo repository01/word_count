@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+    h6:hover{color:red;font-size: 12px;font-weight:bold;}
+    #txt{line-height:25px;}
+    h6{color: blue;}
+
+  </style>
+  <body>
+    <a href="{%url 'tell_me_more'%}">if you want to know more..</a>
+    <h2>msg from the text box area:</h2>
+    <p id="txt">{{text}}</p>
+    <p> there are {{msg}} word(s) </p>
+
+    <a href="{%url 'gotohomestudent'%}">back</a>
+    <hr>
+    <!-- {{dic}} -->
+    {% for i,total in dic %}
+      <h6> word "<em>{{i}}</em>" was written - {{total}} times</h6>
+
+      {% endfor %}
+      <form action="{%url 'gotohomestudent'%}" >
+          <input  type="submit" name="" value="homepage">
+      </form>
+
+  </body>
+</html>
